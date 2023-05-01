@@ -85,6 +85,7 @@ B.TARGETS = \
 	$(B.DEST)/visualinfo.rc
 
 all custom: $(I.TARGETS) $(S.TARGETS) $(D.TARGETS) $(B.TARGETS)
+	touch auto.built
 
 ext: $(EXT)/.dummy
 

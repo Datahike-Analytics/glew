@@ -106,8 +106,11 @@ glew.lib.static: lib lib/$(LIB.STATIC) glew.pc
 
 .PHONY: glew.lib glew.lib.shared glew.lib.static
 
-lib:
+lib: auto/auto.built
 	mkdir lib
+
+auto/auto.built:
+	$(MAKE) -C auto
 
 lib/$(LIB.STATIC): $(LIB.OBJS)
 ifneq ($(AR),)
